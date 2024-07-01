@@ -4,7 +4,7 @@ import connectDB from './utils/database';
 import volunteerRoutes from './routs/volenteerRouts';
 import helpRequestRoutes from './routs/helpRequestRoutes';
 import swaggerUi from 'swagger-ui-express';
-import * as swaggerDocument from '../'; 
+import * as swaggerDocument from '../swagger.json'; 
 
 const app = express();
 
