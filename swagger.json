@@ -1,0 +1,63 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Volunteer Coordination API",
+      "version": "1.0.0",
+      "description": "API for managing volunteer coordination system"
+    },
+    "paths": {
+      "/api/requests": {
+        "get": {
+          "summary": "Get all help requests",
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "integer" },
+                    "title": { "type": "string" },
+                    "description": { "type": "string" },
+                    "status": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/requests/{id}": {
+        "get": {
+          "summary": "Get details of a help request",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "status": { "type": "string" }
+                }
+              }
+            },
+            "404": {
+              "description": "Request not found"
+            }
+          }
+        }
+      }
+    }
+  }
+  
